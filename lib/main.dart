@@ -6,6 +6,7 @@ import 'package:tsak_6/page1/Numbers_Pad.dart';
 import 'package:tsak_6/page1/addContact.dart';
 import 'package:tsak_6/page2/ContactCard.dart';
 import 'package:tsak_6/page2/MyListContacts.dart';
+import 'package:tsak_6/page2/setting_bar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -133,40 +134,11 @@ class MyHomePage2 extends StatelessWidget{
             ),
             Expanded(
               child: Stack(
-                children: [
-                  const Expanded(child: ListContacts()),
-                  Align(
-                    alignment: Alignment.bottomCenter,
-                    child: Container(
-                      margin: const EdgeInsets.only(bottom: 25),
-                      width: 180,
-                      height: 70,
-                      decoration: const BoxDecoration(
-                        color: Color(0xffFFFFFF),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black26,
-                            offset: Offset(0, 20),
-                            blurRadius: 15,
-                            spreadRadius: 10
-                          )
-                        ],
-                        borderRadius: BorderRadius.all(Radius.circular(20)),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          TextButton(
-                            onPressed: (){},
-                            child: const Icon(Icons.groups_outlined, color: Colors.black87, size: 30,),),
-                          TextButton(
-                            onPressed: (){},
-                            child: const Icon(Icons.settings, color: Colors.black87, size: 25,),
-                          )
-                        ],
-                      ),
-                    ),
-                  )
+                children: const [
+                  Expanded(
+                      child: ListContacts()
+                  ),
+                  SettingContainer()
                 ],
               ),
             )
